@@ -1,0 +1,8 @@
+{
+  "name": "download",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-26",
+  "workers_dev": false,
+  "routes": [{ "pattern": "download.ajdapp.org", "custom_domain": true }],
+  "rules": [{ "type": "Text", "globs": ["**/*.html"], "fallthrough": true }]
+}
