@@ -17,7 +17,20 @@
     @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:41px 36px}.guide-body{grid-template-columns:1fr 1fr}.section-top{margin-top:34px}}@media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.header-inner{height:68px}.brand-mark{width:40px;height:40px;border-radius:13px}.header-link{font-size:0}.header-link .arrow{font-size:21px}.hero{margin-top:18px;padding:31px 23px;min-height:225px;border-radius:21px}.hero h1{font-size:34px}.hero p{font-size:13px}.hero:after{right:-260px;top:-75px}.section-top{display:block;margin:32px 0 17px}.section-top h2{font-size:23px}.search{margin-top:18px}.tabs{width:100%}.tab{justify-content:center;flex:1;padding:11px 8px;font-size:12px}.grid{grid-template-columns:1fr;gap:12px}.card{min-height:0;padding:19px}.card p{min-height:0}.tab-intro{align-items:start}.tab-intro p{font-size:12px}.tab-intro .result-count{padding-top:3px}.guide-body{grid-template-columns:1fr;gap:0}.footer-inner{align-items:flex-start;flex-direction:column;gap:8px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
   </style>
-</head>
+<style>
+:root[data-theme="dark"],:root[data-theme="ultra"]{color-scheme:dark;--ink:#e8ecf8;--muted:#a5afc5;--line:#343d53;--paper:#1c2434;--bg:#101622;--blue:#aabaff;--blue-dark:#b7c5ff;--soft:#293552;--shadow:0 18px 52px #0003}
+:root[data-theme="ultra"]{--ink:#f2f4fa;--muted:#a9b0bf;--line:#303030;--paper:#101010;--bg:#000;--soft:#202020}
+:root[data-theme="dark"] .site-header,:root[data-theme="ultra"] .site-header,:root[data-theme="dark"] .guide,:root[data-theme="ultra"] .guide,:root[data-theme="dark"] .search input,:root[data-theme="ultra"] .search input{background:var(--paper);border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .hero,:root[data-theme="ultra"] .hero{background:var(--paper);border-color:var(--line)}
+:root[data-theme="dark"] .tabs,:root[data-theme="ultra"] .tabs{background:var(--line)}
+:root[data-theme="dark"] .tab[aria-selected=true],:root[data-theme="ultra"] .tab[aria-selected=true]{background:var(--paper);color:#b9c7ff}
+:root[data-theme="dark"] .hero-chip,:root[data-theme="ultra"] .hero-chip{background:var(--bg);border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .card p,:root[data-theme="ultra"] .card p,:root[data-theme="dark"] .hero p,:root[data-theme="ultra"] .hero p{color:var(--muted)}
+:root[data-theme="dark"] .card-bottom,:root[data-theme="ultra"] .card-bottom,:root[data-theme="dark"] .guide-body,:root[data-theme="ultra"] .guide-body{border-color:var(--line)}
+.theme-select{border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);padding:8px;font-size:12px}
+</style><script>
+(function(){const key='ajd-download-theme',m=matchMedia('(prefers-color-scheme: dark)');let preference='system';try{preference=localStorage.getItem(key)||'system'}catch(e){};function apply(){document.documentElement.dataset.theme=preference==='system'?(m.matches?'dark':'light'):preference}apply();m.addEventListener('change',apply);document.addEventListener('DOMContentLoaded',()=>{let select=document.createElement('select');select.className='theme-select';select.setAttribute('aria-label','Appearance');[['system','System'],['light','Light'],['dark','Dark'],['ultra','Ultra dark']].forEach(([v,t])=>{let o=document.createElement('option');o.value=v;o.textContent=t;select.appendChild(o)});select.value=preference;select.addEventListener('change',()=>{preference=select.value;try{localStorage.setItem(key,preference)}catch(e){}apply()});document.querySelector('.header-inner').appendChild(select)})})();
+</script></head>
 <body>
   <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="AJD App Downloads home"><span class="brand-mark">AJD</span><span class="brand-copy"><strong>App Downloads</strong><span>Made for everyday life</span></span></a><a class="header-link" href="https://www.ajdapp.org/">Visit AJD App Hub <span class="arrow" aria-hidden="true">↗</span></a></div></header>
   <main class="wrap">
@@ -29,7 +42,7 @@
       <p class="notice" id="private-notice">Some apps are in private GitHub repositories. Their downloads require a GitHub account with access to that repository.</p>
       <details class="guide"><summary><span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg></span><span class="guide-label"><strong>Need help installing?</strong><span>A few quick steps for your device</span></span><span class="chevron" aria-hidden="true">⌄</span></summary><div class="guide-body"><div><h4>Android APK</h4><p>Download the APK, open it from your downloads, and follow Android’s prompts. Your device may ask you to allow installs from your browser.</p></div><div><h4>Android or desktop web app</h4><p>Open the app in Chrome. Use its install button if shown, or open the browser menu and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</p></div><div><h4>iPhone or iPad</h4><p>Open the web app in Safari, tap <strong>Share</strong>, then choose <strong>Add to Home Screen</strong>. Availability and wording depend on the browser and device.</p></div></div></details>
     </section>
-  </main>
+  <p style="margin-top:24px;font-size:13px"><a href="https://github.com/Jhamal96/download/releases/tag/android-latest">Get the AJD App Downloads Android APK</a> · GitHub access required</p></main>
   <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> AJD App Downloads</span><a href="https://www.ajdapp.org/">Back to the AJD App Hub ↗</a></div></footer>
   <script>
   (function(){

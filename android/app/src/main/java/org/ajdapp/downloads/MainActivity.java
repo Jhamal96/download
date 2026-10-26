@@ -1,0 +1,8 @@
+package org.ajdapp.downloads;
+import android.app.Activity;import android.content.Intent;import android.net.Uri;import android.os.Bundle;import android.webkit.WebView;import android.webkit.WebViewClient;import android.webkit.WebChromeClient;import android.webkit.WebResourceRequest;
+public class MainActivity extends Activity {
+ private WebView web;
+ public void onCreate(Bundle b){super.onCreate(b);web=new WebView(this);web.getSettings().setJavaScriptEnabled(true);web.getSettings().setDomStorageEnabled(true);web.setWebChromeClient(new WebChromeClient());web.setWebViewClient(new WebViewClient(){@Override public boolean shouldOverrideUrlLoading(WebView v,WebResourceRequest r){if(!r.isForMainFrame())return false;Uri u=r.getUrl();if("https".equalsIgnoreCase(u.getScheme())&&"download.ajdapp.org".equalsIgnoreCase(u.getHost()))return false;if("https".equalsIgnoreCase(u.getScheme()))try{startActivity(new Intent(Intent.ACTION_VIEW,u));}catch(Exception ignored){}return true;}});web.setDownloadListener((url,agent,disposition,mime,length)->{try{Uri u=Uri.parse(url);if("https".equalsIgnoreCase(u.getScheme()))startActivity(new Intent(Intent.ACTION_VIEW,u));}catch(Exception ignored){}});setContentView(web);web.loadUrl("https://download.ajdapp.org/");}
+ @Override public void onBackPressed(){if(web.canGoBack())web.goBack();else super.onBackPressed();}
+ @Override protected void onDestroy(){web.destroy();super.onDestroy();}
+}
