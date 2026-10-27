@@ -42,7 +42,7 @@
       <p class="notice" id="private-notice">Some apps are in private GitHub repositories. Their downloads require a GitHub account with access to that repository.</p>
       <details class="guide"><summary><span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg></span><span class="guide-label"><strong>Need help installing?</strong><span>A few quick steps for your device</span></span><span class="chevron" aria-hidden="true">⌄</span></summary><div class="guide-body"><div><h4>Android APK</h4><p>Download the APK, open it from your downloads, and follow Android’s prompts. Your device may ask you to allow installs from your browser.</p></div><div><h4>Android or desktop web app</h4><p>Open the app in Chrome. Use its install button if shown, or open the browser menu and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</p></div><div><h4>iPhone or iPad</h4><p>Open the web app in Safari, tap <strong>Share</strong>, then choose <strong>Add to Home Screen</strong>. Availability and wording depend on the browser and device.</p></div></div></details>
     </section>
-  <p style="margin-top:24px;font-size:13px"><a href="https://github.com/Jhamal96/download/releases/tag/android-latest">Get the AJD App Downloads Android APK</a> · GitHub access required</p></main>
+  <p style="margin-top:24px;font-size:13px"><a href="https://github.com/Jhamal96/download/releases/download/android-latest/AJD-App-Downloads-Android.apk">Download the AJD App Downloads Android APK</a></p></main>
   <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> AJD App Downloads</span><a href="https://www.ajdapp.org/">Back to the AJD App Hub ↗</a></div></footer>
   <script>
   (function(){
@@ -53,11 +53,12 @@
     const fallback=[
       {id:'study-timer',name:'Study Timer',description:'Make room for focused work, gentle breaks, and a calmer study day.',category:'Productivity',web_url:'https://studytimer.ajdapp.org/',github_private:false,icon:'flower',color:'rose',downloads:[{url:'https://github.com/Jhamal96/Study-Tracker/releases/download/android-latest/Study-Timer-Android.apk',notes:'Debug APK for testing.',prerelease:true}]},
       {id:'household-finance',name:'Household Finance',description:'Keep your household budget, spending, and shared finances in one place.',category:'Finance',web_url:'https://finance.ajdapp.org/',github_private:false,icon:'wallet',color:'green',downloads:[{url:'https://github.com/Jhamal96/Finances/releases/download/android-preview/Household-Finance-Android.apk',notes:'Android debug-preview app for testing.'}]},
-      {id:'break-tracker',name:'Break Tracker',description:'Track your breaks and bring a little more balance to your workday.',category:'Productivity',web_url:'https://tracker.ajdapp.org/',github_private:true,icon:'clock',color:'blue',downloads:[{url:'https://github.com/Jhamal96/Break-Tracker/releases/download/android-build-22/Break-Tracker-Android.apk',notes:'Android debug APK for testing.'}]},
-      {id:'nibblespot',name:'NibbleSpot',description:'Find your next favorite place to eat and explore something delicious.',category:'Lifestyle',web_url:'https://restaurant.ajdapp.org/',github_private:true,icon:'food',color:'orange',downloads:[{url:'https://github.com/Jhamal96/Restaurant/releases/download/android-build-5/NibbleSpot-Android.apk',notes:'Android debug APK for testing.'}]},
+      {id:'break-tracker',name:'Break Tracker',description:'Track your breaks and bring a little more balance to your workday.',category:'Productivity',web_url:'https://tracker.ajdapp.org/',github_private:false,icon:'clock',color:'blue',downloads:[{url:'https://github.com/Jhamal96/Break-Tracker/releases/download/android-build-22/Break-Tracker-Android.apk',notes:'Android debug APK for testing.'}]},
+      {id:'nibblespot',name:'NibbleSpot',description:'Find your next favorite place to eat and explore something delicious.',category:'Lifestyle',web_url:'https://restaurant.ajdapp.org/',github_private:false,icon:'food',color:'orange',downloads:[{url:'https://github.com/Jhamal96/Restaurant/releases/download/android-build-5/NibbleSpot-Android.apk',notes:'Android debug APK for testing.'}]},
       {id:'repairs-store',name:"AJD's Wireless Repairs Store",description:'Browse products, view photos, and send a purchase request.',category:'Shopping',web_url:'https://repair.ajdapp.org/store',github_private:false,icon:'bag',color:'purple',downloads:[{url:'https://github.com/Jhamal96/Repair-Tracker/releases/download/store-android-latest/AJD-Wireless-Repairs-Store.apk',notes:'Customer store app.',prerelease:true}]},
       {id:'repairs-admin',name:"AJD's Wireless Repairs Admin",description:'Manage repairs, inventory, and your wireless repair business.',category:'Business',web_url:'https://repair.ajdapp.org/',github_private:false,icon:'tool',color:'slate',downloads:[{url:'https://github.com/Jhamal96/Repair-Tracker/releases/download/android-latest/AJD-Wireless-Repairs-Admin.apk',notes:'Android admin app.',prerelease:true}]},
-      {id:'ajd-hub',name:'AJD App Hub',description:'Your everyday apps and useful links, together in one home.',category:'Utilities',web_url:'https://www.ajdapp.org/',github_private:true,icon:'grid',color:'teal',downloads:[]}
+      {id:'ajd-hub',name:'AJD App Hub',description:'Your everyday apps and useful links, together in one home.',category:'Utilities',web_url:'https://www.ajdapp.org/',github_private:true,icon:'grid',color:'teal',downloads:[]},
+      {id:'ajd-downloads',name:'AJD App Downloads',description:'Find and download your AJD apps in one place.',category:'Utilities',web_url:null,github_private:false,icon:'grid',color:'blue',downloads:[{url:'https://github.com/Jhamal96/download/releases/download/android-latest/AJD-App-Downloads-Android.apk',notes:'Android debug test build',prerelease:true}]}
     ];
     const $=id=>document.getElementById(id);
     const paths={flower:['M12 12c-4-7-9-3-5 0-4 4 1 8 5 0 4 8 9 4 5 0 4-3-1-7-5 0Z','M12 12v7'],wallet:['M4 7h15a2 2 0 0 1 2 2v9H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12','M16 12h5v3h-5a1.5 1.5 0 0 1 0-3Z'],clock:['M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z','M12 7v5l3.5 2'],food:['M5 3v7a3 3 0 0 0 3 3V3','M6.5 3v7','M7 13v8','M16 3c-2 2-3 5-3 8h5V3h-2ZM18 11v10'],bag:['M4 8h16l-1 12H5L4 8Z','M9 9V6a3 3 0 1 1 6 0v3'],tool:['M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.6 2.6-2-2 1.6-3.6Z'],grid:['M4 4h6v6H4z','M14 4h6v6h-6z','M4 14h6v6H4z','M14 14h6v6h-6z']};
@@ -74,7 +75,7 @@
       const labels=el('div','badges');const download=apk(app);if(current==='android'&&app.github_private)badge(labels,'GitHub access','private');if(current==='android'&&download&&(download.prerelease===true||/preview|debug|test/i.test(download.notes||'')))badge(labels,'Preview','preview');if(!labels.childNodes.length)badge(labels,app.category||'App','');top.appendChild(labels);article.appendChild(top);
       article.appendChild(el('h3','',app.name||'App'));article.appendChild(el('p','',app.description||'Explore this app.'));
       const bottom=el('div','card-bottom');bottom.appendChild(el('span','card-kind',current==='android'?'Android app':'Installable web app'));
-      const a=el('a','action',current==='android'?(app.github_private?'Open on GitHub':'Download APK'):'Open web app');a.href=current==='android'?safeUrl(download.url):safeUrl(app.web_url);a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' — '+app.name);const arrow=el('span','',current==='android'&&!app.github_private?'↓':'↗');arrow.setAttribute('aria-hidden','true');a.appendChild(arrow);bottom.appendChild(a);article.appendChild(bottom);return article;
+      const a=el('a','action',current==='android'?(app.github_private?'Open on GitHub':'Download APK'):'Open web app');a.href=current==='android'?safeUrl(download.url):safeUrl(app.web_url);a.target='_self';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' — '+app.name);const arrow=el('span','',current==='android'&&!app.github_private?'↓':'↗');arrow.setAttribute('aria-hidden','true');a.appendChild(arrow);bottom.appendChild(a);article.appendChild(bottom);return article;
     }
     function render(){
       const android=apps.filter(a=>apk(a)),web=apps.filter(a=>safeUrl(a.web_url));$('android-count').textContent=android.length;$('web-count').textContent=web.length;
@@ -82,7 +83,7 @@
       const panel=$('app-panel');panel.replaceChildren();panel.setAttribute('aria-labelledby','tab-'+current);filtered.forEach(a=>panel.appendChild(card(a)));if(!filtered.length)panel.appendChild(el('p','empty',q?'No apps found. Try a different search.':'No apps are available in this section yet.'));
       $('result-count').textContent=filtered.length+' '+(filtered.length===1?'app':'apps');$('tab-description').textContent=current==='android'?'Download Android apps to install on your phone or tablet.':'Open an app, then install it from your browser or the app’s own install button.';
       $('private-notice').classList.toggle('visible',current==='android'&&filtered.some(a=>a.github_private));
-      document.querySelectorAll('[role="tab"]').forEach(t=>{const active=t.dataset.tab===current;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1});
+      document.querySelectorAll('[role="tab"][data-tab]').forEach(t=>{const active=t.dataset.tab===current;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1});
     }
     function switchTab(tab,focus){current=tab;render();if(focus)$('tab-'+tab).focus()}
     document.querySelectorAll('[role="tab"]').forEach(t=>{t.addEventListener('click',()=>switchTab(t.dataset.tab,false));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();switchTab(current==='android'?'web':'android',true)}})});
@@ -97,8 +98,8 @@
 const items=[
  ['Study Timer','Focus and study with gentle breaks.','Study-Tracker','Study-Timer',false],
  ['Household Finance','Keep track of household finances.','Finances','Household-Finance',false],
- ['Break Tracker','Track breaks during your day.','Break-Tracker','Break-Tracker',true],
- ['NibbleSpot','Find and save restaurants.','Restaurant','NibbleSpot',true],
+ ['Break Tracker','Track breaks during your day.','Break-Tracker','Break-Tracker',false],
+ ['NibbleSpot','Find and save restaurants.','Restaurant','NibbleSpot',false],
  ["AJD's Wireless Repairs Admin",'Manage your repair business.','Repair-Tracker','AJD-Wireless-Repairs',false],
  ['AJD App Hub','Keep your apps and links together.','My-link-hub','AJD-Hub',true]
 ];
@@ -114,7 +115,7 @@ function draw(){
  const badge=document.createElement('span');badge.className='badge '+(priv?'private':'preview');badge.textContent=priv?'GitHub access':'Preview';top.appendChild(badge);card.appendChild(top);
  const h=document.createElement('h3');h.textContent=name;card.appendChild(h);const p=document.createElement('p');p.textContent=description;card.appendChild(p);
  const bottom=document.createElement('div');bottom.className='card-bottom';const label=document.createElement('span');label.className='card-kind';label.textContent=active==='windows'?'Windows installer':'macOS installer';bottom.appendChild(label);
- const a=document.createElement('a');a.className='action';a.target='_blank';a.rel='noopener noreferrer';a.textContent=priv?'Open on GitHub ↗':'Download '+(active==='windows'?'Windows':'macOS')+' ↓';a.href='https://github.com/Jhamal96/'+repo+'/releases/download/desktop-latest/'+base+(active==='windows'?'-Windows-Setup.exe':'-macOS.dmg');bottom.appendChild(a);card.appendChild(bottom);desktop.appendChild(card);
+ const a=document.createElement('a');a.className='action';a.target='_self';a.rel='noopener noreferrer';a.textContent=priv?'Open on GitHub ↗':'Download '+(active==='windows'?'Windows':'macOS')+' ↓';a.href=priv?'https://github.com/Jhamal96/'+repo+'/releases/tag/desktop-latest':'https://github.com/Jhamal96/'+repo+'/releases/download/desktop-latest/'+base+(active==='windows'?'-Windows-Setup.exe':'-macOS.dmg');bottom.appendChild(a);card.appendChild(bottom);desktop.appendChild(card);
  }
  if(!filtered.length){const p=document.createElement('p');p.className='empty';p.textContent='No apps found. Try a different search.';desktop.appendChild(p)}
  notice.classList.toggle('visible',filtered.some(x=>x[4]));
