@@ -30,8 +30,40 @@
 .theme-select{border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);padding:8px;font-size:12px}
 </style><script>
 (function(){const key='ajd-download-theme',m=matchMedia('(prefers-color-scheme: dark)');let preference='system';try{preference=localStorage.getItem(key)||'system'}catch(e){};function apply(){document.documentElement.dataset.theme=preference==='system'?(m.matches?'dark':'light'):preference}apply();m.addEventListener('change',apply);document.addEventListener('DOMContentLoaded',()=>{let select=document.createElement('select');select.className='theme-select';select.setAttribute('aria-label','Appearance');[['system','System'],['light','Light'],['dark','Dark'],['ultra','Ultra dark']].forEach(([v,t])=>{let o=document.createElement('option');o.value=v;o.textContent=t;select.appendChild(o)});select.value=preference;select.addEventListener('change',()=>{preference=select.value;try{localStorage.setItem(key,preference)}catch(e){}apply()});document.querySelector('.header-inner').appendChild(select)})})();
-</script></head>
+</script><style>
+/* Brief, non-blocking opening animation shared by the website and Android app. */
+.startup-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;pointer-events:none;background:linear-gradient(145deg,#f3f5ff 0%,#faf8ff 55%,#fff6f1 100%);animation:startup-fade .52s ease 1.45s both}
+.startup-content{position:relative;display:flex;flex-direction:column;align-items:center;padding:24px;text-align:center;color:#25365f;animation:startup-rise .72s cubic-bezier(.2,.8,.2,1) both}
+.startup-emblem{position:relative;width:104px;height:104px;display:grid;place-items:center;margin-bottom:23px}
+.startup-emblem:before,.startup-emblem:after{content:"";position:absolute;inset:-12px;border:1px solid rgba(83,105,191,.16);border-radius:36px;animation:startup-ring 1.35s ease-out both}
+.startup-emblem:after{inset:-24px;border-radius:46px;animation-delay:.12s;opacity:.55}
+.startup-emblem img{position:relative;width:96px;height:96px;border-radius:27px;box-shadow:0 17px 36px rgba(39,59,132,.20);animation:startup-icon .9s cubic-bezier(.2,.8,.2,1) both}
+.startup-name{font-size:clamp(23px,5.5vw,30px);line-height:1.2;letter-spacing:-.045em;font-weight:800}
+.startup-caption{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.01em;color:#77849c}
+.startup-progress{width:96px;height:3px;overflow:hidden;margin-top:25px;border-radius:10px;background:rgba(76,97,176,.13)}
+.startup-progress span{display:block;width:100%;height:100%;border-radius:inherit;background:#5069c4;transform:scaleX(0);transform-origin:left;animation:startup-progress 1.25s cubic-bezier(.2,.8,.2,1) .1s both}
+:root[data-theme="dark"] .startup-intro{background:linear-gradient(145deg,#111827,#1b2333 60%,#22212e)}
+:root[data-theme="ultra"] .startup-intro{background:#050505}
+:root[data-theme="dark"] .startup-content,:root[data-theme="ultra"] .startup-content{color:#edf1ff}
+:root[data-theme="dark"] .startup-caption,:root[data-theme="ultra"] .startup-caption{color:#a8b2cb}
+:root[data-theme="dark"] .startup-emblem:before,:root[data-theme="ultra"] .startup-emblem:before,:root[data-theme="dark"] .startup-emblem:after,:root[data-theme="ultra"] .startup-emblem:after{border-color:rgba(166,181,255,.18)}
+@keyframes startup-fade{0%,45%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+@keyframes startup-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes startup-icon{from{opacity:0;transform:scale(.90)}to{opacity:1;transform:scale(1)}}
+@keyframes startup-ring{from{opacity:0;transform:scale(.88)}35%{opacity:.8}to{opacity:.35;transform:scale(1)}}
+@keyframes startup-progress{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.startup-intro{display:none!important}}
+</style>
+</head>
 <body>
+<div class="startup-intro" aria-hidden="true">
+  <div class="startup-content">
+    <div class="startup-emblem"><img src="/icon-192.png" width="96" height="96" alt=""></div>
+    <div class="startup-name">AJD App Downloads</div>
+    <div class="startup-caption">Your apps, all in one place.</div>
+    <div class="startup-progress"><span></span></div>
+  </div>
+</div>
   <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="AJD App Downloads home"><span class="brand-mark">AJD</span><span class="brand-copy"><strong>App Downloads</strong><span>Made for everyday life</span></span></a><a class="header-link" href="https://www.ajdapp.org/">Visit AJD App Hub <span class="arrow" aria-hidden="true">↗</span></a></div></header>
   <main class="wrap">
     <section class="hero" aria-labelledby="hero-title"><div class="hero-content"><div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/></svg> Your apps, in one place</div><h1 id="hero-title">Find your next <span>favorite app.</span></h1><p>Everything you need for work, home, and the little moments in between. Download an Android app or install one right from the web.</p><div class="hero-meta"><span class="hero-chip"><span class="dot" id="cloud-dot"></span><span id="cloud-label">Connecting to app library</span></span><span class="hero-chip">Designed for your devices</span></div></div></section>
